@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICE ACTIVITY</title>
+</head>
+<body>
+      <h1>Saving Money Progress Tracker</h1>
+      <div class="box">
+        <h2>FOR loop (Fixed number of weeks)</h2>
+        <button onclick="forLoopSaving()"> Start FOR LOOP</button>
+        <div id="forResult"></div>
+
+      </div>
+      <div class="box">
+        <h2> WHILE LOOP (Save Until Goal)</h2>
+        <button onclick="doWhileLoopSaving()"> Start DO WHILE Loop </button>
+        <div id="doWhileResult"></div>
+
+      </div>
+
+    <script>
+          // FOR LOOP //
+          function forLoopSaving() {
+            let weeklySave = 1000;
+            let total = 0;
+            let output = "";
+            for (let week = 1; week<=5; week ++) {
+                total += weeklySave;
+                output += "<p> Week" + week + " Total Savings = Php" + total + "</p>"; week++;
+
+            }
+            output+="<strong> Goal Reached! </strong>";
+            document.getElementById("whileResult").innerHTML =output;
+
+          }
+           // DO WHILE LOOP //
+                function doWhileLoopSaving() {
+                    let weeklySave = 2000;
+                    let total = 0;
+                    let goal = 20000;
+                    let week = 1;
+                    let output = "";
+                    do {
+                        total+=weeklySave;
+                        output += "<pp> Week" + week + "Total Savings = Php" + total + "</p>";
+                        week++;
+                    }while(total<goal);
+                    output+= "<strong> Goal Reached! </strong>";
+                    document.getElementById("doWhileResult").innerHTML =output;
+                }
+
+    </script>
+
+</body>
+</html>
